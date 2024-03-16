@@ -22,7 +22,7 @@ exports.handler = async (event, context, callback) => {
 
   if (message) {
 
-    const text = `New email from ${message.from} with subject: ${message.subject} and body: ${message.body}`;
+    const text = `New email from ${message.from} with subject: ${message.subject} and body`;
 
     await bot.sendMessage(process.env.USER_RECIPIENT, text);
   }
