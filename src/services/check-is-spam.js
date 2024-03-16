@@ -6,3 +6,5 @@ const checkIsSpam = (text) => {
 
   return spfStatus === 'FAIL' || dkimStatus === 'FAIL' || spamStatus === 'FAIL' || virusStatus === 'FAIL';
 }
+
+module.exports = { checkIsSpam };
