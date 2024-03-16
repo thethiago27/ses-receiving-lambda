@@ -1,6 +1,7 @@
 const TelegramBot = require("node-telegram-bot-api");
 const {TELEGRAM_BOT_TOKEN} = require("./env/config");
 const {parseEmailMessage} = require("./services/parser-email-message");
+const {checkIsSpam} = require("./services/check-is-spam");
 
 const bot = new TelegramBot(TELEGRAM_BOT_TOKEN, {polling: true})
 
