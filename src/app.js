@@ -1,5 +1,5 @@
 const TelegramBot = require("node-telegram-bot-api");
-const {TELEGRAM_BOT_TOKEN} = require("./env/config");
+const {TELEGRAM_BOT_TOKEN, USER_RECIPIENT_ID} = require("./env/config");
 const {parseEmailMessage} = require("./services/parser-email-message");
 const {checkIsSpam} = require("./services/check-is-spam");
 
@@ -24,7 +24,7 @@ exports.handler = async (event, context, callback) => {
 
     const text = `New email from ${message.from} with subject: ${message.subject} and body`;
 
-    await bot.sendMessage(process.env.USER_RECIPIENT, text);
+    await bot.sendMessage(USER_RECIPIENT_ID, text);
   }
 
   return callback(null, {
