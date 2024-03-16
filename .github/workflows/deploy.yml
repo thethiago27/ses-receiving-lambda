@@ -21,7 +21,7 @@ jobs:
           aws-region: us-east-1
       - name: Zip the code
         run: |
-          zip -r dist.zip src/
+          zip -r dist.zip .
       - name: Deploy to AWS Lambda
         run: |
           aws lambda update-function-code --function-name ses-receiving-lambda --zip-file fileb://dist.zip
