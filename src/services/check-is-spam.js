@@ -1,4 +1,4 @@
-const checkIsSpam = (text) => {
+const checkIsSpam = (receipt) => {
   const { status: spfStatus } = receipt.spfVerdict;
   const { status: dkimStatus } = receipt.dkimVerdict;
   const { status: spamStatus } = receipt.spamVerdict;

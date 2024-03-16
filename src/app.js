@@ -9,7 +9,7 @@ exports.handler = async (event, context, callback) => {
 
   const sesNotification = event.Records[0].ses;
 
-  const verifyMessage = checkIsSpam(sesNotification);
+  const verifyMessage = checkIsSpam(sesNotification.mail.receipt);
 
   if (verifyMessage) {
     return callback(null, {
